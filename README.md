@@ -12,10 +12,10 @@ A starter template for building Model Context Protocol (MCP) servers in Python u
 ## TODO List
 
 ### Basic Setup
-- [ ] Create a `.env.example` file with required environment variables
-- [ ] Complete `pyproject.toml` with all required dependencies
-- [ ] Set up proper logging configuration
-- [ ] Add command-line interface for server startup options
+- [x] Create a `.env.example` file with required environment variables
+- [x] Complete `pyproject.toml` with all required dependencies
+- [x] Set up proper logging configuration
+- [x] Add command-line interface for server startup options
 
 ### MCP Tools Implementation
 - [ ] Organize tools into separate modules by function
