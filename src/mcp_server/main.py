@@ -3,7 +3,7 @@ Main entry point for the MCP server application.
 """
 import os
 from dotenv import load_dotenv
-from mcp.server import FastMCP
+from fastmcp import FastMCP
 
 # Import utility modules
 from src.mcp_server.utils.logging import setup_logging
@@ -17,10 +17,12 @@ logger = setup_logging()
 
 # Initialize MCP server
 app_name = os.getenv("APP_NAME", "mcp_server")
-mcp = FastMCP(app_name)
+mcp = FastMCP(app_name,
+    log_level = "DEBUG",
+    )
 
 # Register the hello_world tool
-@mcp.tool("Hello World")
+@mcp.tool("hello-world")
 def hello_world(name: str = "World") -> str:
     """
     Returns a greeting message.
@@ -34,7 +36,7 @@ def hello_world(name: str = "World") -> str:
     logger.info(f"Hello World tool called with name: {name}")
     return f"Hello, {name}!"
 
-# Register all utility tools
+# # Register all utility tools
 register_utility_tools(mcp)
 
 # Log server initialization
@@ -42,10 +44,5 @@ logger.info(f"MCP server '{app_name}' initialized and ready to start")
 
 
 if __name__ == "__main__":
-
-    # If run directly, start the server
-    host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", "8000"))
-    logger.info(f"Starting MCP server on {host}:{port}")
-    mcp.run()
+    mcp.run(transport="streamable-http")
 
