@@ -6,7 +6,7 @@ A starter template for building Model Context Protocol (MCP) servers in Python u
 
 1. Clone this repository
 2. Install dependencies: `pip install -e .`
-3. Configure your environment variables in `.env`
+3. Copy `.env.example` to `.env` and configure environment variables
 4. Run the server: `python -m src.mcp_server.main`
 
 ## TODO List
@@ -70,7 +70,7 @@ mcp-server-template-python/
 ├── examples/               # Example usage/integrations
 ├── docs/                   # Documentation
 ├── pyproject.toml          # Project metadata and dependencies
-├── .env                    # Environment variables (not in version control)
+├── .env.example            # Example environment variables
 └── README.md               # Documentation
 ```
 

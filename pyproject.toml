@@ -51,11 +51,6 @@ target-version = "py312"
 line-length = 88
 select = ["E", "F", "I"]
 
-[dependency-groups]
-dev = [
-    "pytest>=8.3.5",
-]
-
 [project.scripts]
 mcp-server = "src.mcp_server.cli:main"
 

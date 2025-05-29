@@ -2,9 +2,4 @@
 
 This directory contains documentation for the MCP server template.
 
-## Contents
-
-- [Getting Started](./getting_started.md)
-- [Tool Development Guide](./tool_development.md)
-- [API Reference](./api_reference.md)
-- [Deployment Guide](./deployment.md)
+Refer to the main README.md in the project root for getting started and further details.
