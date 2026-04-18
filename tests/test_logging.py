@@ -2,11 +2,11 @@
 Tests for logging utilities.
 """
 import logging
+import logging.handlers
 import os
-import pytest
 from unittest import mock
 
-from src.mcp_server.utils.logging import setup_logging, LOG_LEVELS
+from mcp_server.utils.logging import LOG_LEVELS, setup_logging
 
 
 class TestLoggingUtility:
