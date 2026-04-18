@@ -2,15 +2,14 @@
 Tests for configuration module.
 """
 import os
-import pytest
 from unittest import mock
 
-from src.mcp_server.config.config import (
-    ServerConfig,
+from mcp_server.config.config import (
+    AppConfig,
     LoggingConfig,
     SecurityConfig,
-    AppConfig,
-    load_config
+    ServerConfig,
+    load_config,
 )
 
 

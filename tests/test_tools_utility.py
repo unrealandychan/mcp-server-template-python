@@ -1,10 +1,9 @@
 """
 Tests for utility tools.
 """
-import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
-from src.mcp_server.tools.utility import register_utility_tools
+from mcp_server.tools.utility import register_utility_tools
 
 
 class TestUtilityTools:

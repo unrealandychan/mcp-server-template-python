@@ -1,14 +1,16 @@
 """
 General utility tools for the MCP server.
 
-This module contains general utility tools that can be used by MCP clients.
+This module contains general-purpose utility tools that MCP clients can invoke.
 """
-from typing import Dict, Any
+from typing import Any, Dict
 
-from mcp.server import FastMCP
+from fastmcp import FastMCP
+
+from mcp_server import __version__
 
 
-def register_utility_tools(mcp_instance: FastMCP):
+def register_utility_tools(mcp_instance: FastMCP) -> None:
     """
     Register all utility tools with the MCP server instance.
 
@@ -35,18 +37,18 @@ def register_utility_tools(mcp_instance: FastMCP):
         Get information about the MCP server.
 
         Returns:
-            Dictionary with server information
+            Dictionary with server name, version and description
         """
         return {
             "name": "MCP Server Template",
-            "version": "0.1.0",
-            "description": "A starter template for building MCP servers in Python"
+            "version": __version__,
+            "description": "A production-ready starter template for building MCP servers in Python",
         }
 
     @mcp_instance.tool("Ping")
     def ping() -> str:
         """
-        Simple ping tool to check if the server is responsive.
+        Simple ping tool to check whether the server is responsive.
 
         Returns:
             "pong" message

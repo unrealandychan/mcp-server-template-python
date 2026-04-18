@@ -2,12 +2,15 @@
 Main entry point for the MCP server application.
 """
 import os
+
 from dotenv import load_dotenv
 from fastmcp import FastMCP
 
-# Import utility modules
-from src.mcp_server.utils.logging import setup_logging
-from src.mcp_server.tools.utility import register_utility_tools
+from mcp_server.tools.datetime_tools import register_datetime_tools
+from mcp_server.tools.math_tools import register_math_tools
+from mcp_server.tools.text_tools import register_text_tools
+from mcp_server.tools.utility import register_utility_tools
+from mcp_server.utils.logging import setup_logging
 
 # Load environment variables
 load_dotenv()
@@ -17,9 +20,7 @@ logger = setup_logging()
 
 # Initialize MCP server
 app_name = os.getenv("APP_NAME", "mcp_server")
-mcp = FastMCP(app_name,
-    log_level = "DEBUG",
-    )
+mcp = FastMCP(app_name)
 
 # Register the hello_world tool
 @mcp.tool("hello-world")
@@ -36,8 +37,12 @@ def hello_world(name: str = "World") -> str:
     logger.info(f"Hello World tool called with name: {name}")
     return f"Hello, {name}!"
 
-# # Register all utility tools
+
+# Register all tool modules
 register_utility_tools(mcp)
+register_math_tools(mcp)
+register_text_tools(mcp)
+register_datetime_tools(mcp)
 
 # Log server initialization
 logger.info(f"MCP server '{app_name}' initialized and ready to start")

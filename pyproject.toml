@@ -1,20 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_server"]
+
 [project]
 name = "mcp-server-template-python"
 version = "0.1.0"
-description = "A starter template for building Model Context Protocol (MCP) servers in Python"
+description = "A production-ready starter template for building Model Context Protocol (MCP) servers in Python"
 readme = "README.md"
 requires-python = ">=3.12"
 license = {text = "MIT"}
 authors = [
     {name = "Your Name", email = "your.email@example.com"}
 ]
+keywords = ["mcp", "model-context-protocol", "llm", "ai", "server", "template"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/mcp-server-template-python"
+Repository = "https://github.com/your-username/mcp-server-template-python"
+Documentation = "https://github.com/your-username/mcp-server-template-python#readme"
+"Bug Tracker" = "https://github.com/your-username/mcp-server-template-python/issues"
+Changelog = "https://github.com/your-username/mcp-server-template-python/blob/main/CHANGELOG.md"
+
 dependencies = [
     "python-dotenv>=1.0.0",
     "mcp[cli]>=1.9.1",
     "fastapi>=0.105.0",
     "uvicorn>=0.24.0",
     "pydantic>=2.5.2",
-    "loguru>=0.7.2",
     "typer>=0.9.0",
     "fastmcp>=2.5.1",
 ]
@@ -27,9 +53,26 @@ dev = [
     "isort>=5.12.0",
     "mypy>=1.7.1",
     "ruff>=0.1.6",
+    "hatchling>=1.21.0",
+    "build>=1.0.3",
+    "twine>=5.0.0",
 ]
 
+[project.scripts]
+mcp-server = "mcp_server.cli:main"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src/mcp_server"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
 
 [tool.black]
 line-length = 88
@@ -49,8 +92,8 @@ disallow_incomplete_defs = true
 [tool.ruff]
 target-version = "py312"
 line-length = 88
-select = ["E", "F", "I"]
 
-[project.scripts]
-mcp-server = "src.mcp_server.cli:main"
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
+ignore = ["E501"]
 
