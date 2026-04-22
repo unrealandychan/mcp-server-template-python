@@ -1,3 +1,16 @@
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,30,2&height=160&section=header&text=mcp--server--template--python&fontSize=38&fontColor=ffffff&fontAlignY=38&desc=Starter+template+for+building+MCP+servers+in+Python&descAlignY=58&descSize=14" alt="Header"/>
+
+[![Stars](https://img.shields.io/github/stars/unrealandychan/mcp-server-template-python?style=for-the-badge&logo=github&color=f78166&logoColor=white&labelColor=0d1117)](https://github.com/unrealandychan/mcp-server-template-python/stargazers)
+[![Forks](https://img.shields.io/github/forks/unrealandychan/mcp-server-template-python?style=for-the-badge&logo=github&color=79c0ff&logoColor=white&labelColor=0d1117)](https://github.com/unrealandychan/mcp-server-template-python/network/members)
+[![Language](https://img.shields.io/badge/Python-3776AB?logo=python&style=for-the-badge&logoColor=white&labelColor=0d1117)](https://github.com/unrealandychan/mcp-server-template-python)
+[![MCP](https://img.shields.io/badge/Model_Context_Protocol-MCP-blueviolet?style=for-the-badge&logoColor=white&labelColor=0d1117)](https://modelcontextprotocol.io/)
+
+</div>
+
+---
+
 # Python MCP Server Template
 
 > A **production-ready** starter template for building [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers in Python, designed to be a **role model** for clean, maintainable, and extensible codebases.
@@ -291,5 +304,3 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
 ## License
 
 [MIT](LICENSE) © Your Name
-
-
